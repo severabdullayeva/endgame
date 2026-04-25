@@ -1,0 +1,121 @@
+.infoCard {
+  width: 100%;
+  max-width: 520px;
+
+  background: linear-gradient(
+    180deg,
+    #1a120b,
+    #0f0b07
+  );
+
+  color: #f3e9dd;
+
+  padding: 28px;
+  border-radius: 18px;
+
+  border: 1px solid rgba(160, 107, 59, 0.25);
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.4),
+    0 0 25px rgba(160, 107, 59, 0.15);
+
+  position: relative;
+  overflow: hidden;
+
+  transition: all 0.25s ease;
+}
+
+.infoCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at top left,
+    rgba(160, 107, 59, 0.18),
+    transparent 60%
+  );
+
+  z-index: 0;
+}
+
+.infoCard h3 {
+    color: #fff;
+  font-size: 18px;
+  margin-bottom: 10px;
+  
+}
+
+.infoCard p {
+  color: rgba(243, 233, 221, 0.75);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+/* META BADGES */
+.infoCardMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.infoCardMeta span {
+  font-size: 12px;
+
+  padding: 6px 10px;
+  border-radius: 999px;
+
+  background: rgba(160, 107, 59, 0.12);
+
+  color: #e6c9a2;
+
+  border: 1px solid rgba(160, 107, 59, 0.25);
+
+  transition: 0.2s ease;
+}
+
+.infoCardMeta span:hover {
+  background: rgba(59, 130, 246, 0.25);
+  transform: scale(1.05);
+}
+
+/* BUTTON */
+.infoCard button {
+  width: 100%;
+  padding: 12px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: linear-gradient(
+    135deg,
+    #a06b3b,
+    #8a552d
+  );
+
+  color: #fff;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba(160, 107, 59, 0.25);
+
+  transition: all 0.25s ease;
+}
+
+.infoCard:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(160, 107, 59, 0.2);
+}
+
+.infoCard button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(160, 107, 59, 0.35);
+}

@@ -1,0 +1,44 @@
+.contactRow {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-bottom: 80px;
+    overflow: hidden;
+}
+
+.contactCol {
+    padding: 0 15px;
+    width: 100%;
+}
+
+.sectionHero {
+    background: url(../../public/homeImg/hero/hero-background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    position: relative;
+
+    padding-top: 80px;
+}
+
+.sectionHero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(160, 107, 59, 0.05);
+}
+
+.sectionFormMap {
+    background: var(--bg-alt);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+
+@media (min-width: 992px) {
+    .contactRow {
+        flex-direction: row;
+        align-items: center;
+    }
+}

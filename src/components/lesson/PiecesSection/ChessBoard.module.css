@@ -1,0 +1,66 @@
+.wrapperBoard {
+  display: flex;
+  align-items: stretch;
+
+
+}
+
+
+/* .boardWithFiles {
+  display: flex;
+  flex-direction: column;
+} */
+
+.ranks {
+  display: flex;
+  flex-direction: column;
+  margin-right: 5px;
+}
+
+.ranks div {
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.files {
+  display: flex;
+  justify-content: space-around;
+  width: 320px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(8, 40px);
+}
+
+.square {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  border: 1px solid black;
+}
+
+.dark {
+  background: #769656;
+}
+
+.light {
+  background: #eeeed2;
+}
+
+.piece {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.piece svg {
+  width: 25px;
+  height: 25px;
+}
+
+.animate .piece {
+  transform: translateY(-40px);
+}

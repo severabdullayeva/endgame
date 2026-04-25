@@ -1,0 +1,127 @@
+:global(.leaflet-control-zoom-in span),
+:global(.leaflet-control-zoom-out span) {
+    padding: 0;
+    justify-content: center;
+}
+
+.sectionMap {
+    display: flex;
+    flex-direction: column;
+
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-main);
+}
+
+.header p {
+    font-size: 14px;
+    color: var(--text-soft);
+}
+
+/* Map Wrapper */
+.mapWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+
+
+    border-radius: 24px;
+    overflow: hidden;
+
+    
+    border: 1px solid var(--border);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+
+    transition: 0.4s;
+}
+
+/* Hover effekti */
+.mapWrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+}
+
+/* Map */
+.mapWrapper :global(.leaflet-container) {
+    height: 400px;
+    width: 100%;
+
+    filter: grayscale(30%) contrast(90%);
+    transition: 0.4s;
+}
+
+/* Hover olanda map canlanır */
+.mapWrapper:hover :global(.leaflet-container) {
+    filter: grayscale(0%) contrast(100%);
+}
+
+/* Overlay Card */
+.overlayCard {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+
+    padding: 15px 18px;
+    border-radius: 14px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+    transition: 0.3s;
+}
+
+/* overlay hover */
+.overlayCard:hover {
+    transform: translateY(-3px);
+}
+
+.overlayCard h4 {
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: #222;
+}
+
+.overlayCard p {
+    font-size: 13px;
+    color: #666;
+}
+
+.leaflet-control-attribution {
+    font-size: 10px;
+    opacity: 0.6;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(6px);
+    border-radius: 6px;
+    padding: 2px 6px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header h2 {
+        font-size: 24px;
+    }
+
+    .mapWrapper {
+        border-radius: 16px;
+    }
+
+    .overlayCard {
+        bottom: 10px;
+        left: 10px;
+        padding: 12px;
+    }
+}

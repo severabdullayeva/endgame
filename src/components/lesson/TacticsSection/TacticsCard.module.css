@@ -1,0 +1,126 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+
+  padding-bottom: 80px;
+  border-bottom: 1px solid var(--border);
+
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CARD */
+.card {
+  display: flex;
+  gap: 16px;
+
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+
+  border-radius: 20px;
+  padding: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  box-shadow:
+    0 8px 30px rgba(15, 23, 42, 0.08),
+    0 2px 10px rgba(62, 38, 18, 0.12);
+
+}
+
+/* hover */
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+
+  box-shadow:
+    0 20px 50px rgba(15, 23, 42, 0.15),
+    0 10px 25px rgba(62, 38, 18, 0.2);
+
+}
+
+/* ACTIVE */
+.active {
+  border: 1px solid rgba(250, 204, 21, 0.6);
+
+  box-shadow:
+    0 0 0 2px rgba(250, 204, 21, 0.2),
+    0 10px 30px rgba(250, 204, 21, 0.25);
+}
+
+/* IMAGE */
+.imageWrapper {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: 0.4s ease;
+}
+
+.card:hover .imageWrapper img {
+  transform: scale(1.08);
+}
+
+/* CONTENT */
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content h3 {
+  margin: 0;
+  font-size: var(--text-lg);
+  color: var(--text-main);
+}
+
+.content p {
+  font-size: var(--text-sm);
+  color: var(--text-soft);
+  margin-top: 6px;
+}
+
+/* overlay SILINDI */
+.hoverOverlay {
+  display: none;
+}
+
+.hint {
+  font-size: 12px;
+  color: #94a3b8;
+
+  opacity: 0;
+  transform: translateY(5px);
+
+  transition: all 0.25s ease;
+}
+
+/* hover edəndə çıxsın */
+.card:hover .hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hint span {
+  white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}

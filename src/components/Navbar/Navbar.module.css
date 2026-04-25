@@ -1,0 +1,59 @@
+
+
+.navbar,
+.navbar ul {
+  list-style: none;
+}
+
+.left {
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   background-color: transparent;
+   height: 80px;
+   z-index: 999;
+   
+}
+
+.navbar a.activeContact{
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* .active {
+  color: aqua;
+}
+
+span {
+  cursor: pointer;
+  display: flex;
+  padding: 25px 0;
+} */
+
+.dropdownParent {
+
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  text-align: left;
+  min-width: 200px;
+  background-color: #fff;
+  transform: translateY(20px);
+  transition: all .3s ease-in;
+  opacity: none;
+  visibility: hidden;
+}
+
+.dropdownParent:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}

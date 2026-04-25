@@ -1,0 +1,116 @@
+.container {
+  margin-top: 40px;
+  padding: 24px;
+
+  width: 100%;
+
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+
+  border-radius: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  box-shadow:
+    0 10px 40px rgba(15, 23, 42, 0.12),
+    0 4px 20px rgba(62, 38, 18, 0.12);
+    
+    position: relative;
+
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at top left,
+    rgba(250, 204, 21, 0.08),
+    transparent 60%
+  );
+
+  border-radius: 18px;
+
+  pointer-events: none;
+}
+
+/* başlıq */
+.summaryTitle {
+ font-size: 22px;
+  margin-bottom: 16px;
+
+  color: var(--text-main);
+  letter-spacing: 0.5px;
+
+  animation: slideDown 0.4s ease;
+}
+
+/* hər item */
+.item {
+    padding: 12px 14px;
+  margin-bottom: 10px;
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: all 0.25s ease;
+
+  animation: fadeInUp 0.4s ease;
+}
+
+.item:hover {
+  transform: translateY(-3px);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 8px 20px rgba(15, 23, 42, 0.12);
+}
+
+/* title */
+.item b {
+  color: #facc15;
+}
+
+/* description */
+.item span {
+  color: var(--text-soft);
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

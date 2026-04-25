@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+  /* Backgrounds */
+  --bg-main: #f7f7f7;
+  --bg-section: #ffffff;
+  --bg-alt: #f3f4f6;
+  --bg-card: #ffffff;
+
+  /* Text */
+  --text-main: #111827;
+  --text-soft: #6b7280;
+  --text-white: #ffffff;
+
+  /* Accent (ONLY place where brown stays) */
+  --accent: #facc15;
+  --accent-hover: #eab308;
+  --accent-soft: rgba(250, 204, 21, 0.18);
+
+    --btn-dark: #0f172a;
+  --btn-dark-hover: #1e293b;
+
+  /* UI */
+  --border: rgba(0, 0, 0, 0.06);
+
+  /* shadows (neutral - NO brown tint) */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.08);
+
+  /* Typography */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-md: 16px;
+  --text-lg: 18px;
+  --text-xl: 24px;
+  --text-2xl: 32px;
+  --text-3xl: 40px;
+  --text-4xl: 48px;
+
+  --swiper-theme-color: var(--accent) !important;
+
+  --font-main: "Poppins", sans-serif;
+  --font-heading: "Playfair Display", serif;
+}

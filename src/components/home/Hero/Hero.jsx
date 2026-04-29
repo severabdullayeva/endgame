@@ -2,6 +2,25 @@ import React from 'react'
 import styles from './Hero.module.css'
 import { Link } from 'react-router-dom'
 
+import king from "../../../assets/homeImg/hero/king.png"
+import kingWhite from "../../../assets/homeImg/hero/king-white.png"
+
+import queen from "../../../assets/homeImg/hero/queen.png"
+import queenWhite from "../../../assets/homeImg/hero/queen-white.png"
+
+import bishop from "../../../assets/homeImg/hero/bishop.png"
+import bishopWhite from "../../../assets/homeImg/hero/bishop-white.png"
+
+import rook from "../../../assets/homeImg/hero/rook.png"
+import rookWhite from "../../../assets/homeImg/hero/rook-white.png"
+
+import knight from "../../../assets/homeImg/hero/knight.png"
+import knightWhite from "../../../assets/homeImg/hero/knight-white.png"
+
+import pawn from "../../../assets/homeImg/hero/pawn.png"
+import pawnWhite from "../../../assets/homeImg/hero/pawn-white.png"
+
+
 import { FaLongArrowAltDown } from "react-icons/fa";
 
 
@@ -9,10 +28,20 @@ import { FaLongArrowAltDown } from "react-icons/fa";
 const Hero = () => {
   const hero = ["king", "queen", "bishop", "rook", "knight", "pawn"]
 
+  const pieces = {
+    king: { black: king, white: kingWhite },
+    queen: { black: queen, white: queenWhite },
+    bishop: { black: bishop, white: bishopWhite },
+    rook: { black: rook, white: rookWhite },
+    knight: { black: knight, white: knightWhite },
+    pawn: { black: pawn, white: pawnWhite },
+  }
+
+
   return (
     <header className={styles.hero}>
       <div className='container'>
-        
+
         <div className={styles.line}></div>
         <div className={styles.heroRow}>
 
@@ -29,8 +58,8 @@ const Hero = () => {
                 key={i}
                 style={{ animationDelay: `${i * 1.2}s` }}
               >
-                <img src={`/homeImg/hero/${piece}-white.png`} className={styles.white} alt={piece} />
-                <img src={`/homeImg/hero/${piece}.png`} className={styles.black} alt={piece} />
+                <img src={pieces[piece].white} className={styles.white} alt={piece} />
+                <img src={pieces[piece].black} className={styles.black} alt={piece} />
               </div>
             ))}
           </div>
@@ -49,7 +78,6 @@ const Hero = () => {
 
         </div>
       </div>
-
 
 
     </header>

@@ -3,44 +3,51 @@ import React, { useState } from 'react'
 import styles from './PiecesSection.module.css'
 import PieceCard from './PieceCard';
 
-// import ChessBoard from './ChessBoard';
+import chessBishop from "../../../assets/homeImg/hero/bishop.png"
+import chessKing from "../../../assets/homeImg/hero/king.png"
+import chessKnight from "../../../assets/homeImg/hero/knight.png"
+import chessPawn from "../../../assets/homeImg/hero/pawn.png"
+import chessQueen from "../../../assets/homeImg/hero/queen.png"
+import chessRook from "../../../assets/homeImg/hero/rook.png"
+
+
 
 const PiecesSection = () => {
 
     const pieces = [
         {
             title: "Pawn",
-            img: "/homeImg/hero/pawn.png",
+            img: chessPawn,
             chess: { type: "pawn", position: "e2" },
             description: "1 square forward (first move 2 squares), captures diagonally",
         },
         {
             title: "Knight",
-            img: "/homeImg/hero/knight.png",
+            img: chessKnight,
             chess: { type: "knight", position: "g1" },
             description: "Moves in L shape (2+1 squares), can jump over pieces",
         },
         {
             title: "Bishop",
-            img: "/homeImg/hero/bishop.png",
+            img: chessBishop,
             chess: { type: "bishop", position: "c1" },
             description: "Moves diagonally any number of squares",
         },
         {
             title: "Queen",
-            img: "/homeImg/hero/queen.png",
+            img: chessQueen,
             chess: { type: "queen", position: "d1" },
             description: "Moves any direction (vertical, horizontal, diagonal)",
         },
         {
             title: "King",
-            img: "/homeImg/hero/king.png",
+            img: chessKing,
             chess: { type: "king", position: "e1" },
             description: "Moves 1 square in any direction",
         },
         {
             title: "Rook",
-            img: "/homeImg/hero/rook.png",
+            img: chessRook,
             chess: { type: "rook", position: "a1" },
             description: "Moves horizontally or vertically any number of squares",
         },

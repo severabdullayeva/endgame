@@ -1,0 +1,50 @@
+.rightWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* container */
+.textTitle {
+    display: flex;
+    flex-direction: column;
+    width: 220px; 
+}
+
+
+.whiteBlack {
+    display: grid;
+    grid-template-columns: 30px 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* list */
+.moveList {
+    max-height: 150px;
+    overflow-y: auto;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/*  row */
+.moveItem {
+    display: grid;
+    grid-template-columns: 30px 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+    padding: 4px 0;
+}
+
+
+.moveList li {
+    list-style: none;
+}
+
+
+.moveItem:nth-child(even) {
+    background: rgba(255, 255, 255, 0.03);
+}
+

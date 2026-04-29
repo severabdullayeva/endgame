@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../pages/Contact.module.css'
+import styles from './Contact.module.css'
 import ContactHero from '../components/contact/ContactHero/ContactHero'
 import ContactInfo from '../components/contact/ContactInfo/ContactInfo'
 import ContactForm from '../components/contact/ContactForm/ContactForm'

@@ -1,43 +1,53 @@
+import absolutePin from "../../assets/tactics/absolute-pin.png"
+import discoveredAttack from "../../assets/tactics/discovered-attack.png"
+import doubleCheck from "../../assets/tactics/double-check.png"
+import knightFork from "../../assets/tactics/knight-fork.png"
+import queenFork from "../../assets/tactics/queen-fork.png"
+import relativePin from "../../assets/tactics/relative-pin.png"
+import sacrificeAttacking from "../../assets/tactics/sacrifice-attacking.png"
+import skewerDirect from "../../assets/tactics/skewer-direct.png"
+
+
 export const tacticsData = [
     {
         title: "Absolute Pin",
         description: "A piece cannot move because it would expose the king to check.",
-        image: "/tactics/absolute-pin.png"
+        image: absolutePin
     },
     {
         title: "Discovered Attack",
         description: "A piece moves away to reveal an attack from a hidden piece.",
-        image: "/tactics/discovered-attack.png"
+        image: discoveredAttack
     },
     {
         title: "Double Check",
         description: "Two pieces deliver check simultaneously, forcing king movement.",
-        image: "/tactics/double-check.png"
+        image: doubleCheck
     },
     {
         title: "Knight Fork",
         description: "One piece attacks two or more pieces at the same time.",
-        image: "/tactics/knight-fork.png"
+        image: knightFork
     },
     {
         title: "Queen Fork",
         description: "The queen attacks two or more pieces at once, often gaining material.",
-        image: "/tactics/queen-fork.png"
+        image: queenFork
     },
     {
         title: "Relative Pin",
         description: "A piece can move, but doing so would lose a more valuable piece.",
-        image: "/tactics/relative-pin.png"
+        image: relativePin
     },
     {
         title: "Attacking Sacrifice",
         description: "Giving up material to create a strong attack or checkmate.",
-        image: "/tactics/sacrifice-attacking.png"
+        image: sacrificeAttacking
     },
     {
         title: "Direct Skewer",
         description: "A valuable piece is forced to move, exposing a weaker piece behind it.",
-        image: "/tactics/skewer-direct.png"
+        image: skewerDirect
     },
 ];
 

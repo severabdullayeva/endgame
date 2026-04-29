@@ -12,7 +12,7 @@
 }
 
 .sectionHero {
-    background: url(../../public/homeImg/hero/hero-background.png);
+    background: url(/public/contact/hero-background.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

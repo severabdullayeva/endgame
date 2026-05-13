@@ -1,33 +1,38 @@
-.contactRow {
-    display: flex;
-    flex-direction: column;
+.contactGrid {
+    position: relative;
+    z-index: 5;
+
+    display: grid;
+    grid-template-columns: 1fr; 
     gap: 40px;
-    padding-bottom: 80px;
-    overflow: hidden;
+   
 }
 
-.contactCol {
-    padding: 0 15px;
-    width: 100%;
-}
+
 
 .sectionHero {
-    background: url(/public/contact/hero-background.png);
+    background: var(--bg-condact);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 
     position: relative;
 
-    padding-top: 80px;
+    z-index: 1;
 }
 
 .sectionHero::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(160, 107, 59, 0.05);
+    width: 100%;
+    height: 100%;
+    background: var(--testimonial-overlay);
+    z-index: 2;
+    pointer-events: none;
+   
 }
+
 
 .sectionFormMap {
     background: var(--bg-alt);
@@ -37,8 +42,8 @@
 
 
 @media (min-width: 992px) {
-    .contactRow {
-        flex-direction: row;
+    .contactGrid {
+        grid-template-columns: repeat(2, 1fr);
         align-items: center;
     }
 }

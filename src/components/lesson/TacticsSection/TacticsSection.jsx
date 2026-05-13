@@ -15,15 +15,13 @@ const TacticsSection = () => {
 
 
     return (
-        <section className={styles.section}>
+        <div className={styles.section}>
             <div>
-                {/* HEADER */}
                 <div className={styles.header}>
                     <h2>Tactics</h2>
                     <p>Learn chess tactics step by step</p>
                 </div>
 
-                {/* GRID */}
                 <TacticsCard
                     data={tacticsData}
                     onSelect={(tactic, index) => {
@@ -38,11 +36,11 @@ const TacticsSection = () => {
             {/* MODAL */}
             {activeImage && (
                 <div className={styles.modal} onClick={() => setActiveImage(null)}>
-                    <img src={activeImage} alt="" />
+                    <img src={activeImage} alt="img" />
                 </div>
             )}
 
-        </section>
+        </div>
     );
 };
 

@@ -5,7 +5,9 @@
   padding-top: 120px;
 }
 
-
+.heroSection {
+  padding-top: 75px;
+}
 
 
 .heroSection,
@@ -13,18 +15,9 @@
 .tacticsSection {
   background: transparent;
 }
-/* Course info - intentional dark focus section */
-.courseInfoCardSection {
-  padding: 90px 20px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
 
-}
 
-/* GLOBAL PAGE FLOW FIX */
 main {
   display: flex;
   flex-direction: column;
@@ -37,7 +30,6 @@ main {
 }
 
 section {
-  /* padding: 100px 0; */
   transition: all 0.3s ease;
   scroll-margin-top: 80px;
 
@@ -45,7 +37,8 @@ section {
   z-index: 1;
 }
 
-/* smooth scrolling */
+
 html {
   scroll-behavior: smooth;
 }
+

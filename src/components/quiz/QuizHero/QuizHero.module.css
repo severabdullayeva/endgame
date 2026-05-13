@@ -1,117 +1,84 @@
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
+    position: relative;
     width: 100%;
-    max-height: 300px;
-
-    padding: 60px 20px;
-
-    /* QƏHVƏYİ GLASS */
-    background: rgba(62, 38, 18, 0.35);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-
-    border: 1px solid rgba(255, 255, 255, 0.15);
-
-    border-radius: 24px;
-
+    height: 300px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+    overflow: hidden;
+    border-radius: 15px;
+    transition: 0.3s ease;
+}
 
-    gap: 30px;
+.wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+}
 
-    transition: all 0.3s ease;
+.heroImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
 }
 
 .wrapper:hover {
     transform: translateY(-4px);
     box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25);
-    background: rgba(62, 38, 18, 0.45);
 }
 
-/* TEXT */
 .text {
-    max-width: 520px;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    padding: 40px;
+    color: white;
 }
 
 .text h1 {
-    font-size: var(--text-3xl);
-    color: var(--text-main);
-    font-weight: 700;
+    font-size: var(--text-xl);
+    color: var(--text-white);
     line-height: 1.2;
 }
 
 .text p {
     margin: 12px 0 20px;
-    color: var(--text-soft);
+    color: var(--text-white);
     line-height: 1.6;
     font-size: var(--text-md);
 }
 
-/* BUTTON */
 .btn {
+    padding: 12px 24px;
     background: var(--accent);
-    color: var(--text-main);
-
-    padding: 12px 22px;
-
-    border-radius: 12px;
     border: none;
-
-    cursor: pointer;
-
+    border-radius: 12px;
     font-weight: 600;
-
-    transition: all 0.25s ease;
+    cursor: pointer;
+    transition: 0.25s ease;
 }
 
 .btn:hover {
-    transform: translateY(-3px);
-    background: var(--accent-hover);
-    box-shadow: 0 10px 25px rgba(250, 204, 21, 0.25);
+    transform: translateY(-2px);
 }
 
-
-/* TABLET */
 @media (min-width: 768px) {
     .wrapper {
-        flex-direction: row;
-        justify-content: space-between;
-
-        padding: 60px 40px;
-
-        text-align: left;
+        height: 450px;
     }
 
     .text {
+        align-items: flex-start;
         text-align: left;
-        flex: 1;
-    }
-
-    .heroImg {
-        flex: 1;
-        justify-content: flex-end;
-    }
-
-    .heroImg img {
-        width: 280px;
-    }
-}
-
-/* DESKTOP */
-@media (min-width: 992px) {
-    .wrapper {
-        padding: 80px 60px;
     }
 
     .text h1 {
-        font-size: var(--text-4xl);
-    }
-
-    .heroImg img {
-        width: 360px;
+        font-size: var(--text-3xl);
     }
 }

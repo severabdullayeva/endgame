@@ -1,18 +1,9 @@
-/* HERO */
-
 .hero {
-    /* background-image: url(/public/homeImg/hero/hero-background.png); */
-    /* background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover; */
-
     display: flex;
     align-items: center;
-    padding-top: 80px;
-    min-height: 700px;
+    min-height: 500px;
     position: relative;
-
-    background-color: var(--bg-main);
+   
 
 
     overflow: hidden;
@@ -31,43 +22,34 @@
     position: absolute;
     inset: 0;
 
-    width: 50%;
-    /* background: linear-gradient(265deg, #3e2612, #654321, #a06b3b); */
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1000' height='560' preserveAspectRatio='none' viewBox='0 0 1000 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1182%26quot%3b)' fill='none'%3e%3cpath d='M261.3354628007753 171.8724675354506L171.842294627917 244.34260620186683 244.31243329433326 333.83577437472513 333.80560146719154 261.3656357083089z' fill='rgba(62%2c 38%2c 18%2c 0.53)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M76.31864843655833 150.7709938852457L17.41984543896163 87.60976049271503-45.741387953569046 146.50856349031173 13.157415044027658 209.6697968828424z' fill='rgba(62%2c 38%2c 18%2c 0.53)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M78.8206395763882 546.3807701842597L167.26423998098645 517.6437024070531 138.52717220377983 429.20010200245486 50.08357179918158 457.93716977966153z' fill='rgba(62%2c 38%2c 18%2c 0.53)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M3.7426532385360103 541.0462130000914L110.18963120484982 535.467563273486 104.61098147824444 429.02058530717215-1.835996488069365 434.5992350337776z' fill='rgba(62%2c 38%2c 18%2c 0.53)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M872.7003443430835 516.851579057054L840.8539899421514 412.68684737559136 736.6892582606888 444.53320177652347 768.5356126616209 548.6979334579861z' fill='rgba(62%2c 38%2c 18%2c 0.53)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M733.0894528065305 555.1257961670623L703.2535491605207 443.7766878704243 591.9044408638828 473.6125915164341 621.7403445098926 584.9616998130721z' fill='rgba(62%2c 38%2c 18%2c 0.53)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M439.8721657383366 144.084049830189L570.8757701706476 213.7399018884982 640.5316222289567 82.73629745618722 509.52801779664577 13.080445397878037z' fill='rgba(62%2c 38%2c 18%2c 0.53)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M712.1298493871548 83.26523102776883L749.4282133163034 163.25183059751214 829.4148128860468 125.95346666836346 792.116448956898 45.96686709862015z' fill='rgba(62%2c 38%2c 18%2c 0.53)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M794.5578419175472 130.86147839026245L848.4491694609957 257.82148988087795 975.4091809516111 203.93016233742946 921.5178534081626 76.97015084681398z' fill='rgba(62%2c 38%2c 18%2c 0.53)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M207.00440032776947 377.3361671925948L266.6598356282837 524.9885508397239 414.3122192754127 465.33311553920964 354.65678397489853 317.6807318920806z' fill='rgba(62%2c 38%2c 18%2c 0.53)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M884.239815022851 54.121299496193224L805.9092224105793-13.9704458269403 737.8174770874457 64.36014678533138 816.1480696997174 132.4518921084649z' fill='rgba(62%2c 38%2c 18%2c 0.53)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M513.9588925542348 164.99275452268495L626.5835208365567 190.99419873041353 652.5849650442852 78.36957044809166 539.9603367619634 52.36812624036308z' fill='rgba(62%2c 38%2c 18%2c 0.53)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M757.6139925815662 667.6330631387037L867.4309976069347 549.8687431208751 749.6666775891061 440.05173809550655 639.8496725637376 557.8160581133352z' fill='rgba(62%2c 38%2c 18%2c 0.53)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M666.2914343672352 433.1561580833569L548.8305417384694 460.27414189255404 575.9485255476665 577.7350345213199 693.4094181764324 550.6170507121227z' fill='rgba(62%2c 38%2c 18%2c 0.53)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1182'%3e%3crect width='1000' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
-    border-bottom-right-radius: 50%;
+    width: 100%;
 
+    background-image: var(--bg-hero);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     background-attachment: fixed;
 
-    background-repeat: no-repeat;
-
-    box-shadow:
-        0 10px 25px rgba(62, 38, 18, 0.35),
-        0 2px 5px rgba(0, 0, 0, 0.1);
+    border-bottom-right-radius: 50%;
+    background-color: var(--bg-main);
+    box-shadow: var(--shadow-md);
 
     z-index: 0;
 }
 
-.hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    width: 50%;
-
-    border-bottom-right-radius: 50%;
-    z-index: 2;
-    pointer-events: none;
-
-}
 
 
 
-/* layout */
+
+
 .heroRow {
     display: flex;
+    flex-direction: column;
+    text-align: center;
     justify-content: space-between;
     align-items: center;
-
     padding-bottom: 15px;
+    padding-top: 15px;
 }
 
 .heroPieces {
@@ -90,19 +72,23 @@
     left: 0;
     right: 0;
     height: 65%;
-    /* background: linear-gradient(to top,
-            rgba(62, 38, 18, 0.25),
-            transparent); */
+  
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480"><path d="M120 120h120v120H120zM0 240h120v120H0zM120 360h120v120H120zM0 0h120v120H0zM360 120h120v120H360zM240 240h120v120H240zM360 360h120v120H360zM240 0h120v120H240z" fill="%233E2612"></path></svg>');
-    transform: rotate3d(1, 0, 0, 75deg);
-    /* border-radius: 30%; */
+    transform: rotate3d(1, 0, 0, 80deg);
+
+    filter: blur(0.5px);
+    opacity: 0.7;
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 
 }
 
 
+
+
 .heroTitle {
     font-family: var(--font-heading);
-    font-size: 3rem;
+    font-size: 2.5rem;
     letter-spacing: 2px;
     color: var(--text-main);
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
@@ -112,18 +98,16 @@
 
 
 
-/*  WRAPPER */
 .pieceWrapper {
     position: relative;
-    width: 80px;
-    height: 200px;
+    width: 40px;
+    height: 110px;
 
     animation: showPiece 10s ease-in-out infinite;
 }
 
 
 
-/* şəkillər üst-üstə */
 .pieceWrapper img {
     position: absolute;
     inset: 0;
@@ -139,45 +123,14 @@
     transform: scale(1.05);
 }
 
-.pieceWrapper::after {
-    content: "";
-    position: absolute;
-    bottom: -6px;
-    left: 50%;
-    transform: translateX(-50%);
 
-    width: 55%;
-    height: 10px;
 
-    background: rgba(0, 0, 0, 0.05);
-    border-radius: 50%;
-    filter: blur(10px);
-}
-
-.pieceWrapper::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background: radial-gradient(circle,
-            rgba(250, 204, 21, 0.08),
-            transparent 60%);
-
-    opacity: 0;
-    transition: 0.4s ease;
-}
-
-.pieceWrapper:hover::before {
-    opacity: 1;
-}
-
-/* QARA → əvvəl görünür */
 .black {
     opacity: 1;
     animation: blackAnim 10s ease-in-out infinite;
 }
 
-/*  AĞ → sonra gəlir */
+
 .white {
     opacity: 0;
     animation: whiteAnim 10s ease-in-out infinite;
@@ -196,7 +149,11 @@
     color: var(--text-main);
 }
 
-/*  WRAPPER görünmə animasiyası */
+.heroText a {
+    font-family: var(--font-main);
+}
+
+
 @keyframes showPiece {
 
     0%,
@@ -209,7 +166,7 @@
     }
 }
 
-/* QARA → yox olur */
+
 @keyframes blackAnim {
     0% {
         opacity: 1;
@@ -228,7 +185,7 @@
     }
 }
 
-/* AĞ → ortaya çıxır */
+
 @keyframes whiteAnim {
     0% {
         opacity: 0;
@@ -265,42 +222,11 @@
 
 
 
-@media (max-width: 992px) {
-    .pieceWrapper {
-        width: 50px;
-        height: 100px;
-    }
 
-    .heroRow {
-        flex-direction: column;
-        text-align: center;
-
-        padding-top: 15px;
-    }
-
-}
-
-@media (max-width: 768px) {
-    .pieceWrapper {
-        width: 45px;
-        height: 110px;
-    }
-
-}
-
-@media (max-width: 480px) {
-    .heroPieces {
-        gap: 5px;
-    }
-
-    .heroTitle {
-        font-size: 2.5rem;
-    }
-}
 
 .scrollFloat {
     position: absolute;
-    bottom: 35px;
+    bottom: 5px;
     left: 50%;
     transform: translateX(-50%);
 
@@ -308,6 +234,7 @@
     flex-direction: column;
     align-items: center;
     gap: 6px;
+
 
     z-index: 10;
     cursor: pointer;
@@ -317,10 +244,9 @@
     animation: float 3.5s ease-in-out infinite;
 }
 
-/* nazik xətlər */
 .scrollLine {
     width: 4px;
-    height: 28px;
+    height: 10px;
     background: linear-gradient(to bottom,
             transparent,
             var(--accent),
@@ -329,14 +255,13 @@
 
 }
 
-/* SCROLL text */
 .scrollText {
     font-size: 10px;
     letter-spacing: 2px;
     color: var(--text-main);
 }
 
-/* yumşaq hərəkət */
+
 @keyframes float {
 
     0%,
@@ -351,7 +276,6 @@
     }
 }
 
-/* ARROW */
 
 .scrollArrow {
     font-size: 18px;
@@ -374,5 +298,64 @@
     100% {
         transform: translateY(0);
         opacity: 0.4;
+    }
+}
+
+
+
+
+@media (min-width: 481px) {
+    .heroTitle {
+        font-size: 3rem;
+    }
+
+}
+
+
+@media (min-width: 768px) {
+    .pieceWrapper {
+        width: 50px;
+        height: 100px;
+    }
+
+    .hero {
+        min-height: 600px;
+
+    }
+
+
+
+    .scrollLine {
+        height: 28px;
+
+    }
+
+    .scrollFloat {
+        bottom: 10px;
+
+    }
+
+}
+
+
+@media (min-width: 992px) {
+    .heroRow {
+        flex-direction: row;
+        text-align: left;
+        padding-top: 0;
+    }
+
+    .pieceWrapper {
+        width: 80px;
+        height: 200px;
+    }
+
+    .hero::before {
+        width: 45%;
+    }
+
+    .scrollFloat {
+        bottom: 35px;
+
     }
 }

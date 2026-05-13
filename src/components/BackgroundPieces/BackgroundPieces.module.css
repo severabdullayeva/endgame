@@ -14,14 +14,36 @@
   animation: float 10s ease-in-out infinite;
 }
 
-/* fərqli yerlər */
-.p1 { top: 10%; left: 5%; }
-.p2 { top: 40%; right: 10%; }
-.p3 { bottom: 20%; left: 30%; }
-.p4 { top: 70%; right: 30%; }
+.p1 {
+  top: 10%;
+  left: 5%;
+}
+
+.p2 {
+  top: 40%;
+  right: 10%;
+}
+
+.p3 {
+  bottom: 20%;
+  left: 30%;
+}
+
+.p4 {
+  top: 70%;
+  right: 30%;
+}
 
 @keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }

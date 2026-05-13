@@ -1,26 +1,37 @@
-import styles from "./Board.module.css"
+import { Chess } from 'chess.js'
+import React from 'react'
+import stylesBoard from './Board.module.css'
 
-import { Chessboard } from "react-chessboard";
+import { Chessboard } from "react-chessboard"
 
-const Board = ({ position, makeMove, onPieceDragBegin = () => console.log("DAŞI TUTDUM!") }) => {
+const Board = ({ position, makeMove }) => {
+
+    const onDrop = (sourceSquare, targetSquare) => {
+        return makeMove(sourceSquare, targetSquare)
+    }
+
+
     return (
-        <div className={styles.wrapper}>
+        <div className={stylesBoard.boardWrapper}>
+
             <Chessboard
-                id="basicBoard"
                 position={position}
-                onPieceDrop={makeMove}
-              
-                // Xana rənglərini burdan dəyişirik
-                customDarkSquareStyle={{ backgroundColor: "#475569" }} // Slate-600
-                customLightSquareStyle={{ backgroundColor: "#cbd5e1" }} // Slate-300
-                // Daşların altına düşən kölgə və ya gediş effektləri üçün:
+                onPieceDrop={onDrop}
+                customDarkSquareStyle={{
+                    backgroundColor: "#111827"
+                }}
+                customLightSquareStyle={{
+                    backgroundColor: "#e5e7eb"
+                }}
+
                 customBoardStyle={{
-                    borderRadius: "4px",
-                    boxShadow: "0 5px 15px rgba(0, 0, 0, 0.5)"
+                    borderRadius: "12px",
+                    boxShadow: "0 0 20px rgba(250, 204, 21, 0.2)"
                 }}
             />
-        </div>
-    );
-};
 
-export default Board;
+        </div>
+    )
+}
+
+export default Board

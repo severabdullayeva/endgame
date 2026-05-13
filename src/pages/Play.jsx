@@ -1,51 +1,74 @@
-import React from 'react'
-
-import styles from './Play.module.css'
-
-import Board from "../features/Play/Board"
+import React, { useState } from 'react'
 
 import useChessGame from '../hooks/useChessGame'
+import useTimer from '../hooks/useTimer'
 
+import PlayHero from '../features/Playhero/PlayHero'
 
+import Board from '../features/Play/Board'
 import GameSidebar from '../features/GameSidebar/GameSidebar'
+import StartGame from '../features/StartGame/StartGame'
 
-import StartPlay from '../features/StartPlay/StartPlay'
-
+import stylesPlay from './Play.module.css'
 
 const Play = () => {
-  const gameData = useChessGame();
 
+  const game = useChessGame()
+  const [isPlaying, setIsPlaying] = useState(false)
+
+  const timer = useTimer(game.currentTurn, isPlaying)
+
+  const handleMove = (from, to) => {
+    if (!isPlaying || timer.gameOver) return false;
+    return game.makeMove(from, to);
+  };
+
+  const handleRestart = () => {
+    game.resetGame();
+    timer.resetTimer();
+    setIsPlaying(false);
+  }
 
   return (
-    <section className={styles.playContainer} style={{ textAlign: "center", padding: "20px" }}>
+    <main className={stylesPlay.playContainer}>
+      <section className='container'>
+        <div className={stylesPlay.sectionPlay}>
+          <PlayHero />
+        </div>
+      </section>
 
+      <section id='play'>
 
-      <div className='container'>
-        <div className='row'>
+        <div className='container'>
+          <div className={`section-lg ${stylesPlay.grid}`}>
+            <div className={stylesPlay.board}>
+              <Board
+                position={game.position}
+                makeMove={handleMove}
+              />
+            </div>
 
-          <div className={styles.board}>
-            <Board
-              position={gameData.position}
-              makeMove={gameData.makeMove}
-            />
-          </div>
-
-          <div className={styles.sidebar}>
-            <GameSidebar
-              turn={gameData.currentTurn}
-              isCheck={gameData.isCheck}
-              history={gameData.history}
-            />
-          </div>
-
-          <div>
-          
+            <div className={stylesPlay.sidebar}>
+              <GameSidebar
+                game={game}
+                timer={timer}
+                onRestart={handleRestart}
+                isPlaying={isPlaying}
+                onStart={() => setIsPlaying(true)}
+              />
+              {!isPlaying && (
+                <div className={stylesPlay.overlay}>
+                  <StartGame onStart={() => setIsPlaying(true)} />
+                </div>
+              )}
+            </div>
           </div>
         </div>
+      </section>
 
-      </div>
-    </section>
-  );
+
+    </main>
+  )
 }
 
 export default Play

@@ -4,35 +4,46 @@ const useTimer = (activeTurn, isPlaying) => {
     const [whiteTime, setWhiteTime] = useState(600);
     const [blackTime, setBlackTime] = useState(600);
     const [gameOver, setGameOver] = useState(false);
-    
+    const [winner, setWinner] = useState(null);
 
-    
-    console.log("TURN:", activeTurn);
+
+    const resetTimer = () => {
+        setWhiteTime(600);
+        setBlackTime(600);
+        setGameOver(false);
+        setWinner(null);
+    }
+
+
     useEffect(() => {
-        if (gameOver, isPlaying) return;
+        if (!isPlaying || gameOver) return;
 
         const interval = setInterval(() => {
-            setWhiteTime(t => {
-                if (activeTurn === "w") return Math.max(t - 1, 0);
-                return t;
-            });
-
-            setBlackTime(t => {
-                if (activeTurn === "b") return Math.max(t - 1, 0);
-                return t;
-            });
+            if (activeTurn === "w") {
+                setWhiteTime(prev => {
+                    if (prev <= 1) {
+                        setGameOver(true);
+                        setWinner("black");
+                        return 0;
+                    }
+                    return prev - 1;
+                });
+            } else {
+                setBlackTime(prev => {
+                    if (prev <= 1) {
+                        setGameOver(true);
+                        setWinner("white")
+                        return 0;
+                    }
+                    return prev - 1;
+                });
+            }
         }, 1000);
 
         return () => clearInterval(interval);
-    }, [activeTurn, gameOver]);
+    }, [activeTurn, isPlaying, gameOver]);
 
-    useEffect(() => {
-        if (whiteTime === 0 || blackTime === 0) {
-            setGameOver(true);
-        }
-    }, [whiteTime, blackTime]);
-
-    return { whiteTime, blackTime, gameOver, isPlaying };
+    return { whiteTime, blackTime, gameOver, winner, resetTimer };
 };
 
 export default useTimer;

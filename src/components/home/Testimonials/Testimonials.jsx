@@ -18,15 +18,15 @@ function Testimonials() {
             <div className='container'>
 
 
-                <div className={`row ${styles.rowCard}`}>
+                <div className={styles.testimonialGrid}>
 
-                    <div className={`col ${styles.testimonialsCol}`}>
+                    <div className={styles.left}>
                         <div className={styles.testimonialsText}>
                             <h2>What Our Clients Say</h2>
                             <p>We believe that the best way to understand the quality of our platform is through the experiences of those who use it. Over time, we’ve had the opportunity to build a space for chess lovers of different levels, helping them improve their skills, learn new strategies, and enjoy the game with confidence. You can view real feedback from our users who share their honest thoughts and experiences with the platform.</p>
                         </div>
                     </div>
-                    <div className={`col ${styles.testimonialsCol}`}>
+                    <div className={styles.right}>
                         <Swiper
                             modules={[Navigation, Pagination, A11y, Keyboard]}
                             spaceBetween={30}
@@ -37,8 +37,8 @@ function Testimonials() {
                             speed={800}
                         >
                             {testimonials.map((item) => (
-                                <SwiperSlide 
-                                key={item.id}>
+                                <SwiperSlide
+                                    key={item.id}>
                                     <div className={styles.testimonialCard}>
                                         <div className={styles.wrapper}>
 
@@ -55,7 +55,7 @@ function Testimonials() {
                                                     <span>{item.job}</span>
                                                     <div className={styles.stars}>
                                                         {Array(item.rating).fill().map((_, i) => (
-                                                            <FaStar key={i}  style={{ color: "var(--accent)" }} />
+                                                            <FaStar key={i} style={{ color: "var(--accent)" }} />
                                                         ))}
                                                     </div>
                                                 </div>

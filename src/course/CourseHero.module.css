@@ -1,0 +1,132 @@
+.courseHero {
+    position: relative;
+
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 80px 20px;
+
+    border-radius: 32px;
+
+    overflow: hidden;
+
+    background: linear-gradient(
+        135deg,
+        #1a120b,
+        #0f0b07
+    );
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(160, 107, 59, 0.25),
+            transparent 40%
+        );
+
+    z-index: 0;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 760px;
+
+    text-align: center;
+}
+
+.tag {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    padding: 8px 16px;
+
+    border-radius: 999px;
+
+    background: rgba(160, 107, 59, 0.18);
+
+    border: 1px solid rgba(160, 107, 59, 0.3);
+
+    color: #f0c89a;
+
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.content h1 {
+    font-size: clamp(2rem, 6vw, 40px);
+
+    line-height: 1.05;
+
+    color: #fff;
+
+    font-family: var(--font-heading);
+
+    margin-bottom: 20px;
+}
+
+.content p {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: rgba(255, 255, 255, 0.8);
+
+    line-height: 1.8;
+
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 16px;
+
+    margin-top: 35px;
+}
+
+.buttons button,
+.secondary {
+    padding: 14px 26px;
+
+    border: none;
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: 0.25s ease;
+
+    background: linear-gradient(
+        135deg,
+        #a06b3b,
+        #8a552d
+    );
+
+    color: white;
+}
+
+.buttons button:hover,
+.secondary:hover {
+    transform: translateY(-3px);
+}
+
+.secondary {
+    background: rgba(255, 255, 255, 0.08) !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+
+    backdrop-filter: blur(6px);
+    
+}

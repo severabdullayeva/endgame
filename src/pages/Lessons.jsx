@@ -12,8 +12,7 @@ import { tacticsData } from '../components/data/tacticData'
 
 import PuzzleBox from '../components/quiz/PuzzleBox'
 
-import Footer from '../components/Footer/Footer'
-import CourseInfoCard from '../components/lesson/CourseInfoCard/CourseInfoCard'
+
 
 
 const Lessons = () => {
@@ -26,9 +25,11 @@ const Lessons = () => {
         </div>
       </section>
 
-      <section className={styles.piecesSection}>
+      <section id='lesson' className={styles.piecesSection}>
         <div className="container">
+
           <PiecesSection />
+
         </div>
       </section>
 
@@ -39,34 +40,26 @@ const Lessons = () => {
       </section>
 
       <section>
-        <div>        
-            <Cta
-                title="Test your knowledge"
-                text="Solve chess puzzles and improve your tactics..."
-                buttonText="Start Quiz"
-                link="/learn/quiz"
-                image={quizImg}
-            />
+        <div className={`container section-lg`}>
+          <Summary data={tacticsData} />
         </div>
       </section>
 
       <section>
-        <div className="container">
-            <Summary data={tacticsData} />
+        <div>
+          <Cta
+            title="Test your knowledge"
+            text="Solve chess puzzles and improve your tactics..."
+            buttonText="Start Quiz"
+            link="/learn/quiz"
+            image={quizImg}
+          />
         </div>
       </section>
 
-      <section className={styles.courseInfoCardSection}>
-      
-          <CourseInfoCard />
-      
-      </section>
 
-      <section className={styles.footer}>
 
-        <Footer />
-
-      </section>
+    
 
     </main>
   )

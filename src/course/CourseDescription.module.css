@@ -1,0 +1,83 @@
+.courseDescription {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+
+}
+
+
+.tag {
+    width: fit-content;
+
+    padding: 6px 14px;
+    border-radius: 999px;
+
+    background: rgba(160, 107, 59, 0.12);
+
+    color: var(--accent);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    border: 1px solid rgba(160, 107, 59, 0.25);
+}
+
+.courseDescription h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+
+    font-family: var(--font-heading);
+
+    color: var(--text-main);
+
+    line-height: 1.1;
+}
+
+.courseDescription p {
+    color: var(--text-soft);
+
+    line-height: 1.8;
+
+    max-width: 650px;
+}
+
+.left {
+    display: grid;
+    gap: 14px;
+}
+
+.points {
+    display: grid;
+    gap: 14px;
+    margin-top: 10px;
+}
+
+.point {
+    display: flex;
+    align-items: center;
+    
+    padding: 14px 16px;
+
+    border-radius: 14px;
+
+    background: var(--bg-alt);
+
+    border: 1px solid var(--border);
+
+    color: var(--text-main);
+
+    transition: 0.25s ease;
+}
+
+.point:hover {
+    transform: translateY(-3px);
+
+    border-color: var(--accent);
+}
+
+@media (min-width: 768px) {
+    .courseDescription {
+        grid-template-columns: 1.5fr 1fr;
+
+    }
+}

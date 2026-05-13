@@ -28,7 +28,7 @@ const OfficeMap = () => {
 
             <div className={styles.mapWrapper}>
 
-                <MapContainer center={position} zoom={13} scrollWheelZoom={true}>
+                <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
 
                     <TileLayer
                         attribution='&copy; OpenStreetMap contributors'

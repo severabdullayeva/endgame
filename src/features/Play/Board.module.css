@@ -1,5 +1,57 @@
-.wrapper {
-  width: 400px;
-  height: auto;;
-  /* margin: 0 auto; */
+.boardWrapper {
+  padding: 16px;
+  border-radius: 20px;
+  background: var(--bg-cta);
+
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+
+  width: 260px;
+  height: max-content;
+
+  position: relative;
 }
+
+.boardWrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    var(--accent-soft),
+    transparent 70%
+  );
+
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+
+@media (min-width: 350px) {
+  .boardWrapper {
+    width: 300px;
+  }
+}
+ 
+
+@media (min-width: 440px) {
+  .boardWrapper {
+    width: 400px;
+  }
+}
+ 
+
+@media (min-width: 768px) {
+  .boardWrapper {
+    width: 350px;
+  }
+}
+
+
+@media (min-width: 992px) {
+  .boardWrapper {
+    width: 520px;
+  }
+}
+ 
+ 

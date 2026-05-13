@@ -1,0 +1,30 @@
+.btn {
+  font-size: 0.7rem;
+  color: var(--text-main);
+  text-transform: uppercase;
+  padding: 5px 15px;
+  border-radius: 10px;
+
+  margin-bottom: 15px;
+
+  border: 2px solid var(--border);
+  background: var(--bg-card);
+
+  box-shadow: 3px 3px var(--text-main);
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.btn:active {
+  box-shadow: none;
+  transform: translate(3px, 3px);
+}
+
+@media (min-width: 992px) {
+  .btn {
+    font-size: 1rem;
+
+  }
+}

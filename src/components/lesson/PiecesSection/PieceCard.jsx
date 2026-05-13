@@ -1,19 +1,24 @@
 import React, { useState } from 'react'
 import styles from './PieceCard.module.css'
 
-import ChessBoard from './ChessBoard';
+
+
+
+
 
 
 
 import { ChevronDown } from "lucide-react";
 
-const PieceCard = ({ title, img, description, chess }) => {
+
+
+const PieceCard = ({ title, img, description, chess, gif }) => {
     const [open, setOpen] = useState(false);
 
     return (
         <div className={`${styles.card} ${open ? styles.open : ""}`}>
 
-               
+
             <div className={styles.topSection}>
                 <div className={styles.imageBox}>
                     <img src={img} alt={title} />
@@ -27,7 +32,7 @@ const PieceCard = ({ title, img, description, chess }) => {
                     <div className={styles.arrow}
                         onClick={() => setOpen(!open)}>
                         <span className={styles.level}>Beginner</span>
-                        <ChevronDown className={open ? styles.rotate : ""} />
+                        <ChevronDown className={`${styles.down} ${open ? styles.rotate : ""}`} />
                     </div>
                 </div>
             </div>
@@ -35,10 +40,17 @@ const PieceCard = ({ title, img, description, chess }) => {
 
             <div className={styles.expand}>
                 <p>{description}</p>
-                <div>
-                    <ChessBoard piece={chess} />
+
+                <div className={styles.gifWrapper}>
+                    <img className={styles.gif} src={gif} alt={title} />
+
+                    <div className={styles.overlayGif}></div>
                 </div>
+
+             
             </div>
+
+
         </div>
     )
 }

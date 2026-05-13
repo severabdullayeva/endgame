@@ -5,6 +5,7 @@ import { HashRouter } from 'react-router-dom';
 
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ScrollToTop from './scroll/ScrolToTop.jsx';
 
 AOS.init({
   duration: 700,
@@ -13,6 +14,7 @@ AOS.init({
 
 createRoot(document.getElementById('root')).render(
   <HashRouter>
+    <ScrollToTop />
     <App />
   </HashRouter>
 )

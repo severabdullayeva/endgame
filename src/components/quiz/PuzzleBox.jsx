@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "./PuzzleBox.module.css";
 
+import { Chessboard } from 'react-chessboard';
+
 import Timer from "./Timer";
 
 const PuzzleBox = ({ puzzles, score, setScore, index, setIndex }) => {
@@ -13,12 +15,17 @@ const PuzzleBox = ({ puzzles, score, setScore, index, setIndex }) => {
 
   const [started, setStarted] = useState(false);
 
+
+
+
   // əgər data yoxdursa
   if (!puzzles || puzzles.length === 0) {
     return <p>No puzzles</p>;
   }
 
-  const canGoNext = selected !== null;
+  const current = puzzles[index]
+
+
 
   const isFinished = index >= puzzles.length;
   if (isFinished) {
@@ -27,6 +34,7 @@ const PuzzleBox = ({ puzzles, score, setScore, index, setIndex }) => {
         <h2>🏆 Finished!</h2>
         <p>You completed all puzzles!</p>
         <p>Score: {score} / {puzzles.length}</p>
+
 
 
         <button
@@ -45,7 +53,6 @@ const PuzzleBox = ({ puzzles, score, setScore, index, setIndex }) => {
     );
   }
 
-  const current = puzzles[index];
 
   if (!current) return null
 
@@ -58,7 +65,7 @@ const PuzzleBox = ({ puzzles, score, setScore, index, setIndex }) => {
       {!started && (
         <div className={styles.overlay}>
           <button className={styles.btn} onClick={() => setStarted(true)}>
-            
+
             Start Quiz
           </button>
         </div>
@@ -84,50 +91,62 @@ const PuzzleBox = ({ puzzles, score, setScore, index, setIndex }) => {
             Question {index + 1} / {puzzles.length}
           </p>
 
-          {started &&(
-             <Timer
-             key={index}
-             onTimeUp={()=>{
-              setSelected("timeout")
-              setResult(false)
-             }}
-             />
-             )}
+          {started && (
+            <Timer
+              key={index}
+              onTimeUp={() => {
+                setSelected("timeout")
+                setResult(false)
+              }}
+            />
+          )}
 
         </div>
 
-        {/* question */}
-        <p>{current.question}</p>
+        <div className={styles.content}>
+          <div className={styles.board}>
+            {/* BOARd */}
+            <Chessboard
+              position={current.fen}
+              boardWidth={220}
 
-        {/* options */}
-        <div className={styles.options}>
-          {current.options.map((opt, i) => (
-            <button
-              key={i}
-              disabled={!started}
-              onClick={() => {
-                if (!started || selected) return;
 
-                const isCorrect = opt === current.correct;
+            />
+          </div>
+          <div className={styles.info}>
+            <p>{current.question}</p>
 
-                setSelected(opt);
-                setResult(isCorrect);
+            <div className={styles.options}>
+              {current.options.map((opt, i) => (
+                <button
+                  key={i}
+                  disabled={!started}
+                  onClick={() => {
+                    if (!started || selected) return;
 
-                if (isCorrect) {
-                  setScore(prev => prev + 1);
-                }
-              }}
-              className={
-                selected === opt
-                  ? result
-                    ? styles.correct
-                    : styles.wrong
-                  : ""
-              }
-            >
-              {opt}
-            </button>
-          ))}
+                    const isCorrect = opt === current.correct;
+
+                    setSelected(opt);
+                    setResult(isCorrect);
+
+                    if (isCorrect) {
+                      setScore(prev => prev + 1);
+                    }
+                  }}
+                  className={
+                    selected === opt
+                      ? result
+                        ? styles.correct
+                        : styles.wrong
+                      : ""
+                  }
+                >
+                  {opt}
+                </button>
+              ))}
+            </div>
+          </div>
+
         </div>
 
         {/* result text */}

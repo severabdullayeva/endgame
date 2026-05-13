@@ -1,5 +1,4 @@
 .container {
-  margin-top: 40px;
   padding: 24px;
 
   width: 100%;
@@ -36,7 +35,6 @@
   pointer-events: none;
 }
 
-/* başlıq */
 .summaryTitle {
  font-size: 22px;
   margin-bottom: 16px;
@@ -47,7 +45,6 @@
   animation: slideDown 0.4s ease;
 }
 
-/* hər item */
 .item {
     padding: 12px 14px;
   margin-bottom: 10px;
@@ -72,17 +69,14 @@
     0 8px 20px rgba(15, 23, 42, 0.12);
 }
 
-/* title */
 .item b {
   color: #facc15;
 }
 
-/* description */
 .item span {
   color: var(--text-soft);
 }
 
-/* ANIMATIONS */
 
 @keyframes fadeIn {
   from {

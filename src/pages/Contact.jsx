@@ -5,14 +5,13 @@ import ContactInfo from '../components/contact/ContactInfo/ContactInfo'
 import ContactForm from '../components/contact/ContactForm/ContactForm'
 import OfficeMap from '../components/contact/OfficeMap/OfficeMap'
 
-import Footer from '../components/Footer/Footer'
 
 const Contact = () => {
   return (
     <main>
-      <section className={styles.sectionHero}>
+      <section className={`section-lg ${styles.sectionHero}`}>
         <div className="container">
-          <div className={styles.contactRow}>
+          <div className={styles.contactGrid}>
 
             <div className={styles.contactCol}>
               <ContactHero />
@@ -23,23 +22,20 @@ const Contact = () => {
           </div>
         </div>
       </section>
-      <section className={styles.sectionFormMap}>
+      <section className={`section-lg ${styles.sectionFormMap}`}>
         <div className='container'>
-          <div className={`${styles.contactRow} ${styles.contactCard}`}>
+          <div className={`${styles.contactGrid} ${styles.contactCard}`}>
 
-            <div className={styles.contactCol}>
-              <ContactForm />
-            </div>
-            <div className={styles.contactCol}>
-              <OfficeMap />
-            </div>
+            <ContactForm />
+
+            <OfficeMap />
+
           </div>
         </div >
-
       </section >
-    
-        <Footer />
-      
+
+
+
     </main>
   )
 }

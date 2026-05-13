@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Cta = ({ title, text, buttonText, link, image }) => {
     return (
-        <section className={styles.cta}>
+        <section className={`section-lg ${styles.cta}`}>
             <div className='container'>
                 <div className='row'>
 

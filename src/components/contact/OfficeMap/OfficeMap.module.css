@@ -10,7 +10,6 @@
 
 }
 
-/* Header */
 .header {
     text-align: center;
     margin-bottom: 40px;
@@ -28,7 +27,6 @@
     color: var(--text-soft);
 }
 
-/* Map Wrapper */
 .mapWrapper {
     position: relative;
     width: 100%;
@@ -48,13 +46,11 @@
     transition: 0.4s;
 }
 
-/* Hover effekti */
 .mapWrapper:hover {
     transform: translateY(-5px);
     box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
 }
 
-/* Map */
 .mapWrapper :global(.leaflet-container) {
     height: 100%;
     width: 100%;
@@ -63,12 +59,10 @@
     transition: 0.4s;
 }
 
-/* Hover olanda map canlanır */
 .mapWrapper:hover :global(.leaflet-container) {
     filter: grayscale(0%) contrast(100%);
 }
 
-/* Overlay Card */
 .overlayCard {
     position: absolute;
     bottom: 20px;
@@ -85,7 +79,6 @@
     transition: 0.3s;
 }
 
-/* overlay hover */
 .overlayCard:hover {
     transform: translateY(-3px);
 }
@@ -110,7 +103,7 @@
     padding: 2px 6px;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
     .header h2 {
         font-size: 24px;

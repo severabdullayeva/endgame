@@ -1,59 +1,256 @@
+.navbar {
+  position: relative;
+  z-index: 1000;
+}
 
-
-.navbar,
-.navbar ul {
+.navbar .left {
   list-style: none;
+  margin: 0;
+}
+
+.logo {
+  height: 60px;
+  padding: 5px;
+  z-index: 999;
+  background: linear-gradient(to right,
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0.6));
+  border-bottom: 1px solid rgba(250, 204, 21, 0.2);
+  border-radius: 15px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdownParent span {
+  font-family: var(--font-main);
+
+}
+
+.left li a,
+.dropdownParent span {
+  text-decoration: none;
+  color: var(--color-nav);
+  transition: color 0.3s ease;
+  cursor: pointer;
+  display: block;
+}
+
+
+.activeContact,
+.activeParent span {
+  color: var(--accent) !important;
+}
+
+
+.mode {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.moonIcon {
+  color: #f1c40f;
+  fill: #f1c40f;
+}
+
+.sunIcon {
+  color: #e67e22;
+  fill: #f39c12;
+  filter: drop-shadow(0 0 5px #f39c12);
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1001;
+  color: var(--accent);
+}
+
+.burger span {
+  display: block;
+  border: 1px solid currentColor;
+  width: 25px;
+  transition: all 0.3s ease;
+}
+
+.open span:first-child {
+  transform: rotate(-45deg) translateY(10px);
+}
+
+.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.open span:last-child {
+  transform: rotate(45deg) translateY(-10px);
+}
+
+.navContent {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 400px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background-color: var(--nav-bg);
+  box-shadow: var(--shadow-lg);
+
+  gap: 25px;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease;
+}
+
+.navContent.openMenu {
+  opacity: 1;
+  visibility: visible;
+  /* transform: translateY(0); */
+
 }
 
 .left {
-   display: flex;
-   justify-content: space-evenly;
-   align-items: center;
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   background-color: transparent;
-   height: 80px;
-   z-index: 999;
-   
-}
-
-.navbar a.activeContact{
-  color: var(--accent);
-  font-weight: 600;
-}
-
-/* .active {
-  color: aqua;
-}
-
-span {
-  cursor: pointer;
   display: flex;
-  padding: 25px 0;
-} */
-
-.dropdownParent {
-
-  position: relative;
+  gap: 15px;
+  flex-direction: column;
 }
+
+.left a {
+  font-family: var(--font-main);
+}
+
+
 
 .dropdown {
-  position: absolute;
-  left: 0;
-  top: 100%;
-  text-align: left;
-  min-width: 200px;
-  background-color: #fff;
-  transform: translateY(20px);
-  transition: all .3s ease-in;
-  opacity: none;
-  visibility: hidden;
+  display: none;
+  list-style: none;
+  padding: 10px 0;
 }
 
-.dropdownParent:hover .dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+.show {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+
+@media (min-width: 768px) {
+
+  .left li {
+    display: flex;
+    align-items: center;
+  }
+
+
+  .burger {
+    display: none;
+  }
+
+  .navContent {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+
+    flex-direction: row;
+    position: fixed;
+    top: 15px;
+    left: 50%;
+
+    width: 500px;
+    height: auto;
+
+    transform: translateX(-50%);
+    border-radius: 50px;
+
+    overflow: visible;
+  }
+
+  .left {
+    flex-direction: row;
+  }
+
+  .left>li>a,
+  .dropdownParent>span {
+    position: relative;
+  }
+
+  .left>li>a::before,
+  .dropdownParent>span::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    right: 100%;
+    width: 0;
+    height: 1px;
+    background: var(--accent);
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  .left>li>a:hover::before,
+  .dropdownParent>span:hover::before {
+    opacity: 1;
+    transform: translateX(100%);
+    width: 100%;
+  }
+
+  .dropdownParent {
+    position: relative;
+  }
+
+
+
+  .dropdown {
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%) translateY(15px);
+
+    background-color: var(--nav-bg);
+    box-shadow: var(--shadow-lg);
+    border-radius: 12px;
+    min-width: 120px;
+
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease;
+    padding: 0;
+  }
+
+  .dropdownParent:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .dropdown li a {
+    padding: 5px 50px;
+  }
 }

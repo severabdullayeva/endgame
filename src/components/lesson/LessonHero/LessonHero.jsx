@@ -11,7 +11,15 @@ const LessonHero = () => {
             <div className={styles.text}>
                 <h1>Learn Chess the Smart Way</h1>
                 <p>From basic moves to advanced strategies — improve your game with guided lessons.</p>
-                <button className={styles.btn}>Begin Your Journey</button>
+                <button className={styles.btn}
+                    onClick={() => {
+                        document.getElementById("lesson")?.scrollIntoView({
+                            behavior: "smooth"
+                        })
+                    }}
+                >
+                    Begin Your Journey
+                </button>
             </div>
 
             <div className={styles.heroImg}>

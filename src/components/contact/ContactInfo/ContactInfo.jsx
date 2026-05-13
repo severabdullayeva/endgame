@@ -17,7 +17,7 @@ const ContactInfo = () => {
                 </div>
             </div>
 
-            <div>
+            <div className={styles.listParent}>
                 <ul className={styles.list}>
                     <li className={styles.item}>
                         <div className={styles.itemIcon}>

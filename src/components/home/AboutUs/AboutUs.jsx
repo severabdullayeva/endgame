@@ -22,20 +22,20 @@ const AboutUs = () => {
     ]
 
     return (
-        <section className={styles.aboutSection}>
+        <section className={`section-lg ${styles.aboutSection}`}>
             <div className='container'>
                 <div className={styles.content}>
-                    <h1>About Us</h1>
+                    <h1>Discover Endgame</h1>
                     <div className={styles.aboutText}>
-                        <p>Welcome to Chess Labyrinth — a place where strategy meets creativity.</p>
-                        <p>Here you can play, learn, and challenge yourself through chess. From beginners to advanced players, everyone can improve, explore new tactics, and enjoy the game.</p>
-                        <p>Chess is not just a game — it’s a way of thinking.</p>
+                        <p>Welcome to Endgame — where strategy meets creativity.</p>
+                        <p>Our platform is designed to help you learn chess step by step, from your first move to advanced strategies.</p>
+                        <p>Play real games, practice with challenges, and improve your thinking skills through chess.</p>
                     </div>
                 </div>
 
-                <div className='row'>
+                <div className={styles.aboutCardGrid}>
                     {cards.map((item, index) => (
-                        <div className={`${styles.aboutCol} ${styles.sectionPadding} `} key={index}>
+                        <div key={index}>
                             <div className={styles.card}
                             data-aos="fade-up"
                             data-aos-delay={index * 120}

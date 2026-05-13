@@ -1,0 +1,17 @@
+
+
+.courseInfoCardSection {
+  padding: 90px 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: var(--bg-section);
+
+
+}
+
+.sectionDescription {
+  background: var(--bg-section);
+}

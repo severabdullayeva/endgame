@@ -6,10 +6,13 @@ import logo from '../../assets/logo/endgame-logo1.png'
 
 import { Moon, Sun } from 'lucide-react'
 
-const Navbar = ({ theme, toggleTheme }) => {
+import { FaUserCog } from "react-icons/fa";
+
+
+const Navbar = ({ theme, toggleTheme, setShowLogin }) => {
     const [open, setOpen] = useState(false)
 
-    const[learnOpen, setLearnOpen] = useState(false)
+    const [learnOpen, setLearnOpen] = useState(false)
 
     const location = useLocation();
 
@@ -58,9 +61,18 @@ const Navbar = ({ theme, toggleTheme }) => {
                                 }
                             </button>
                         </li>
+                        <li>
+                            <button
+                                onClick={() => setShowLogin(true)}
+                            >
+                                <FaUserCog />
+
+
+                            </button>
+                        </li>
                     </ul>
                 </div>
-            </div>
+            </div >
 
 
             <div className={`${styles.burger} ${open ? styles.open : ""}`}
@@ -70,7 +82,7 @@ const Navbar = ({ theme, toggleTheme }) => {
                 <span></span>
             </div>
 
-        </nav>
+        </nav >
     )
 }
 

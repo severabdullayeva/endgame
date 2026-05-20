@@ -2,7 +2,10 @@ import React from 'react'
 
 import styles from './GrandmasterCard.module.css'
 
-const GrandmasterCard = ({ gm, onClick }) => {
+import { GoStar, GoStarFill } from "react-icons/go";
+
+
+const GrandmasterCard = ({ gm, onClick, toggleFavorite, isFavorite }) => {
     return (
         <div className={styles.card} onClick={onClick}>
             <div className={styles.imgWrapper}>
@@ -14,6 +17,16 @@ const GrandmasterCard = ({ gm, onClick }) => {
                 <p className={styles.country}>{gm.country}</p>
                 <p className={styles.rating}>{gm.rating}</p>
                 <p className={styles.bio}>{gm.shortBio}</p>
+            <p
+                className={styles.favorite}
+                onClick={(e) => {
+                    e.stopPropagation()
+                    toggleFavorite(gm)
+                }}
+            >
+                {isFavorite ? <GoStarFill /> : <GoStar />
+}
+            </p>
             </div>
         </div>
     )

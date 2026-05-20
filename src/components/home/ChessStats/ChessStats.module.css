@@ -1,0 +1,41 @@
+.sectionStats {
+    background: var(--bg-alt);
+}
+
+.statsWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+
+    text-align: center;
+
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.statCard {
+    width: 200px;
+}
+
+.statCard h3 {
+    color: var(--text-main);
+    margin-bottom: 5px;
+}
+
+.statCard span {
+    color: var(--text-soft);
+    font-size: var(--text-xl);
+    font-family: var(--font-main);
+    font-weight: 600;
+}
+
+@media (min-width: 768px) {
+    .statsWrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+}

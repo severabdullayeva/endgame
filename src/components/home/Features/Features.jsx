@@ -38,7 +38,7 @@ const Features = () => {
     ];
 
     return (
-        <section className={`section-lg ${styles.featureSection}`} id='next-section'>
+        <section className={`section-lg ${styles.featureSection}`}>
 
             <div className="container">
                 <div className={styles.title}>

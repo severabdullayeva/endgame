@@ -16,10 +16,15 @@ import Lessons from './pages/Lessons'
 import Grandmasters from './pages/Grandmasters'
 import Contact from './pages/Contact'
 import Course from './pages/Course'
+import LoginModal from './components/auth/LoginModal'
 
 
 function App() {
   const [theme, setTheme] = useState("dark");
+
+  const [showLogin, setShowLogin] = useState(false);
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const toggleTheme = () => {
     setTheme(prev => (prev === "dark" ? "light" : "dark"));
@@ -29,9 +34,22 @@ function App() {
     document.documentElement.classList.remove("dark", "light");
     document.documentElement.classList.add(theme);
   }, [theme]);
+
+
+  const handleLogin = (user) => {
+    localStorage.setItem("user", JSON.stringify(user))
+    setIsLoggedIn(true)
+    setShowLogin(false)
+  }
+
   return (
     <>
-      <Navbar theme={theme} toggleTheme={toggleTheme} />
+      <Navbar 
+      theme={theme} 
+      toggleTheme={toggleTheme} 
+      setShowLogin={setShowLogin} 
+      isLoggedIn={isLoggedIn}
+      />
       {/* <BackgroundPieces/> */}
 
 
@@ -47,6 +65,12 @@ function App() {
         <Route path='/grandmasters' element={<Grandmasters />} />
         <Route path='/contact' element={<Contact />} />
       </Routes>
+
+      {showLogin && (
+        <LoginModal onClose={() => setShowLogin(false)} 
+        onLogin={handleLogin}
+        />
+      )}
 
       <Footer />
     </>

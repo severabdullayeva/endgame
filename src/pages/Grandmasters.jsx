@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './Grandmasters.module.css'
 
 import GrandmasterHero from '../components/grandmaster/Grandmasters/GrandmasterHero'
@@ -13,6 +13,16 @@ const Grandmasters = () => {
 
   const [selectedGM, setSelectedGM] = useState(null);
 
+  const [showAll, setShowAll] = useState(false)
+
+  const [favorites, setFavorites] = useState(() => {
+    const savedFavorites = localStorage.getItem("favorites")
+
+    return savedFavorites ? JSON.parse(savedFavorites) : []
+  })
+
+  const [showFavorites, setShowFavorites] = useState(false)
+
   const filtered = grandmasters
     .filter((gm) => {
       if (selectedFilter === "all") return true
@@ -21,17 +31,34 @@ const Grandmasters = () => {
     .filter((gm) =>
       gm.name?.toLowerCase().includes(search.toLowerCase())
     )
+    .filter((gm) => {
+      if (!showFavorites) return true
+      return favorites.some(f => f.id === gm.id)
+    })
 
+  const toggleFavorite = (gm) => {
+    setFavorites((prev) => {
+      const exists = prev.find(item => item.id === gm.id)
 
-
+      if (exists) {
+        return prev.filter(item => item.id !== gm.id)
+      } else {
+        return [...prev, gm]
+      }
+    })
+  }
+  
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(favorites))
+  }, [favorites])
 
   return (
     <main>
       <section className={`section-lg ${styles.sectionMaster}`}>
         <div className="container">
-          
-            <GrandmasterHero />
-         
+
+          <GrandmasterHero />
+
         </div>
       </section>
 
@@ -43,6 +70,13 @@ const Grandmasters = () => {
             onClick={() => setSelectedFilter("all")}
           >
             All
+          </button>
+
+          <button
+            className={`${styles.btn} ${showFavorites ? styles.active : ""}`}
+            onClick={() => setShowFavorites(!showFavorites)}
+          >
+            ⭐ Favorites
           </button>
 
           <select
@@ -75,8 +109,10 @@ const Grandmasters = () => {
         <div className='container'>
           {filtered.length > 0 ? (
             <GrandmasterGrid
-              data={filtered}
+              data={filtered.slice(0, showAll ? filtered.length : 6)}
               setSelectedGM={setSelectedGM}
+              toggleFavorite={toggleFavorite}
+              favorites={favorites}
             />
 
           ) : (
@@ -84,7 +120,16 @@ const Grandmasters = () => {
           )
 
           }
+          <button className={styles.button} onClick={() => setShowAll(!showAll)}>
+            <span className={styles.text}>
+              {showAll ? "Show Less" : "Show More"}
+            </span>
+
+            <svg className={styles.arrow} viewBox="0 0 448 512" height="1em" xmlns="http://www.w3.org/2000/svg"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg>
+          </button>
         </div>
+
+
       </section>
 
       {selectedGM && (

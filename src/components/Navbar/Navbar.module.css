@@ -3,6 +3,8 @@
   z-index: 1000;
 }
 
+
+
 .navbar .left {
   list-style: none;
   margin: 0;
@@ -39,6 +41,27 @@
   display: block;
 }
 
+.left li:last-child button {
+
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--color-nav);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-nav);
+
+  transition: 0.3s ease;
+}
+
+.left li:last-child button svg {
+  font-size: 25px;
+  text-align: center;
+}
+
+.left li:last-child button :hover {
+  color: var(--accent);
+}
 
 .activeContact,
 .activeParent span {
@@ -130,7 +153,7 @@
 .navContent.openMenu {
   opacity: 1;
   visibility: visible;
-  /* transform: translateY(0); */
+
 
 }
 
@@ -181,7 +204,7 @@
     top: 15px;
     left: 50%;
 
-    width: 500px;
+    width: 550px;
     height: auto;
 
     transform: translateX(-50%);

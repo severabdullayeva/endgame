@@ -1,5 +1,6 @@
 import React from 'react'
 import Hero from '../components/home/Hero/Hero'
+import ChessStats from '../components/home/ChessStats/ChessStats'
 import Features from '../components/home/Features/Features'
 import Grandmaster from '../components/home/Grandmaster/Grandmaster'
 import AboutUs from '../components/home/AboutUs/AboutUs'
@@ -15,6 +16,7 @@ const Home = () => {
     <>
       <main>
         <Hero />
+        <ChessStats />
         <Features />
         <AboutUs />
         <Grandmaster />
@@ -27,7 +29,7 @@ const Home = () => {
           image={ctaImg}
         />
       </main>
-    
+
     </>
   )
 }

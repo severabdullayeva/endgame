@@ -52,11 +52,16 @@
   margin-bottom: 4px;
 }
 
-.rating {
+.rating,
+.favorite {
   color: var(--accent);
   font-weight: 600;
   font-size: var(--text-sm);
   margin-bottom: 6px;
+}
+
+.favorite {
+  font-size: 25px;
 }
 
 .bio {
@@ -65,6 +70,8 @@
   line-height: 1.4;
   padding: 0 6px;
 }
+
+
 
 @media (min-width: 768px) {
   .imgWrapper {

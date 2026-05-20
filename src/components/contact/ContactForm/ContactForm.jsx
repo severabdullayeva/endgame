@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from '../ContactForm/ContactForm.module.css'
 
 
@@ -8,12 +8,25 @@ const ContactForm = () => {
 
     const [errors, setErrors] = useState({})
 
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        subject: "",
-        message: ""
+    const [formData, setFormData] = useState(() => {
+        const savedData = localStorage.getItem("contactForm")
+
+        return savedData
+            ? JSON.parse(savedData)
+            : {
+                name: "",
+                email: "",
+                subject: "",
+                message: ""
+            }
     })
+
+    useEffect(() => {
+        localStorage.setItem(
+            "contactForm",
+            JSON.stringify(formData)
+        )
+    }, [formData])
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -48,6 +61,7 @@ const ContactForm = () => {
                 message: ""
             })
 
+
             setTimeout(() => {
                 setSuccess(false)
 
@@ -55,6 +69,7 @@ const ContactForm = () => {
 
         }, 1500)
     }
+    console.log(localStorage.getItem("contactForm"));
 
 
 

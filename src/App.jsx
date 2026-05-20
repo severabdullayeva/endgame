@@ -6,7 +6,6 @@ import Navbar from './components/Navbar/Navbar'
 
 import Footer from './components/Footer/Footer'
 
-// import BackgroundPieces from './components/BackgroundPieces/BackgroundPieces'
 
 import Home from './pages/Home'
 import Play from './pages/Play'
@@ -50,7 +49,6 @@ function App() {
       setShowLogin={setShowLogin} 
       isLoggedIn={isLoggedIn}
       />
-      {/* <BackgroundPieces/> */}
 
 
       <Routes>

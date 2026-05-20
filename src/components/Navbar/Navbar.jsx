@@ -6,8 +6,7 @@ import logo from '../../assets/logo/endgame-logo1.png'
 
 import { Moon, Sun } from 'lucide-react'
 
-import { FaUserCog } from "react-icons/fa";
-
+import { FaRegUser } from "react-icons/fa";
 
 const Navbar = ({ theme, toggleTheme, setShowLogin }) => {
     const [open, setOpen] = useState(false)
@@ -65,7 +64,7 @@ const Navbar = ({ theme, toggleTheme, setShowLogin }) => {
                             <button
                                 onClick={() => setShowLogin(true)}
                             >
-                                <FaUserCog />
+                                <FaRegUser />
 
 
                             </button>

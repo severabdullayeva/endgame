@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-    /* --- Tipografiya (Şriftlər) --- */
+    /* --- Tipografiya --- */
     --font-main: "Poppins", sans-serif;
     --font-heading: "Playfair Display", serif;
 
@@ -66,7 +66,7 @@
     --swiper-theme-color: var(--accent) !important;
 }
 
-/* --- Tünd rejim (Dark Mode) --- */
+/* --- Tünd rejim --- */
 html.dark {
     --bg-main: #050505;
     --bg-section: #0b0b0b;

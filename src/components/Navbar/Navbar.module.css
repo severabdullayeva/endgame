@@ -44,9 +44,9 @@
 .left li:last-child button {
 
   cursor: pointer;
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--color-nav);
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--accent);
   border-radius: 50%;
   background: transparent;
   color: var(--color-nav);
@@ -55,11 +55,11 @@
 }
 
 .left li:last-child button svg {
-  font-size: 25px;
+  font-size: 15px;
   text-align: center;
 }
 
-.left li:last-child button :hover {
+.left li:last-child button:hover {
   color: var(--accent);
 }
 

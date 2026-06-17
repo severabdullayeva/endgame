@@ -12,7 +12,7 @@ const CourseHero = () => {
             <div className={styles.content}>
 
                 <span className={styles.tag}>
-                    Beginner Chess Course
+                    Endgame Chess Course
                 </span>
 
                 <h1>

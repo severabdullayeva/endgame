@@ -2,14 +2,31 @@ import React, { useState } from 'react'
 import stylesLogin from './LoginModal.module.css'
 
 const LoginModal = ({ onClose, onLogin }) => {
+
+    // input məlumatlarını saxlamaq üçün state
     const [form, setForm] = useState({
         email: "",
         password: ""
     })
+
+    
+
     return (
+        // modaldan kənara klik ediləndə bağlanır
         <div className={stylesLogin.overlay} onClick={onClose}>
-            <div className={stylesLogin.modal} onClick={(e) => e.stopPropagation()}>
-                <button onClick={onClose}>x</button>
+
+            {/* modalın özü */}
+            <div
+                className={stylesLogin.modal}
+                onClick={(e) => e.stopPropagation()}
+            >
+
+                {/* modalı bağlamaq üçün button */}
+                <div>
+                    <button onClick={onClose}>x</button>
+                </div>
+
+                {/* email inputu */}
                 <input
                     type="email"
                     placeholder='email'
@@ -19,6 +36,7 @@ const LoginModal = ({ onClose, onLogin }) => {
                     }
                 />
 
+                {/* password inputu */}
                 <input
                     type="password"
                     placeholder='password'
@@ -27,7 +45,10 @@ const LoginModal = ({ onClose, onLogin }) => {
                         setForm({ ...form, password: e.target.value })
                     }
                 />
+
+                {/* login funksiyasını işə salır */}
                 <button
+                    className={stylesLogin.loginBotton}
                     onClick={() =>
                         onLogin({
                             email: form.email
@@ -36,6 +57,7 @@ const LoginModal = ({ onClose, onLogin }) => {
                 >
                     Login
                 </button>
+
             </div>
         </div>
     )

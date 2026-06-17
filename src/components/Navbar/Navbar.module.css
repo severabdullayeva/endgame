@@ -68,6 +68,10 @@
   color: var(--accent) !important;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+}
 
 .mode {
   background: transparent;
@@ -136,7 +140,7 @@
   overflow-x: hidden;
 
   background-color: var(--nav-bg);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-sm);
 
   gap: 25px;
 

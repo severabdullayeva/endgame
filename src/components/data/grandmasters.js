@@ -9,7 +9,7 @@ import vKramnik from '../../assets/grandmaster/vladimir-kramnik.png'
 import wSo from '../../assets/grandmaster/wesley-so.png'
 import tRadjabov from '../../assets/grandmaster/teimour-radjabov.png'
 import sMamedyarov from '../../assets/grandmaster/shakhriyar-mamedyarov.png'
-import rMammadov from '../../assets/grandmaster/rauf-Mammadov.png'
+import rMammadov from '../../assets/grandmaster/rauf-mammadov.png'
 import vGashimov from '../../assets/grandmaster/vugar-gashimov.png'
 
 

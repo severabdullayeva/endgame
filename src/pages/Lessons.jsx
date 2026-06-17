@@ -1,6 +1,7 @@
 import React from 'react'
-import LessonHero from '../components/lesson/LessonHero/LessonHero'
 import styles from '../pages/Lessons.module.css'
+import LessonHero from '../components/lesson/LessonHero/LessonHero'
+import ChessSetup from '../components/lesson/ChessSetup/ChessSetup'
 import PiecesSection from '../components/lesson/PiecesSection/PiecesSection'
 import TacticsSection from '../components/lesson/TacticsSection/TacticsSection'
 
@@ -25,7 +26,13 @@ const Lessons = () => {
         </div>
       </section>
 
-      <section id='lesson' className={styles.piecesSection}>
+      <section  id='lesson'  className={styles.chessSetup}>
+        <div className='container'>
+          <ChessSetup />
+        </div>
+      </section>
+
+      <section className={styles.piecesSection}>
         <div className="container">
 
           <PiecesSection />
@@ -59,7 +66,7 @@ const Lessons = () => {
 
 
 
-    
+
 
     </main>
   )

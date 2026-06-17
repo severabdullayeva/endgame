@@ -75,7 +75,7 @@
 }
 
 /* login button */
-.modal button:last-child {
+.modal .loginBotton {
     padding: 12px;
     border: none;
     border-radius: 12px;
@@ -91,7 +91,13 @@
     transition: 0.25s ease;
 }
 
-.modal button:last-child:hover {
+.modal .loginBotton:hover {
     background: var(--accent-hover);
     transform: translateY(-1px);
+}
+
+.end {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
 }

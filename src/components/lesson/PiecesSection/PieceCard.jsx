@@ -25,7 +25,7 @@ const PieceCard = ({ title, img, description, chess, gif }) => {
                     <div className={styles.overlay}>
                         <span className={styles.badge}>Piece</span>
                         <h3 className={styles.cardTitle}>{title}</h3>
-                        <button className={styles.routeBtn}>Start Learning</button>
+                       
                     </div>
                 </div>
                 <div className={styles.bottom}>

@@ -47,7 +47,7 @@ const Grandmasters = () => {
       }
     })
   }
-  
+
   useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(favorites))
   }, [favorites])
@@ -66,7 +66,8 @@ const Grandmasters = () => {
         <div className={styles.filterBar}>
 
           <button
-            className={`${styles.btn} ${selectedFilter === "all" ? styles.active : ""}`}
+            className={`${styles.btn} ${selectedFilter === "all" && !showFavorites ? styles.active : ""
+              }`}
             onClick={() => setSelectedFilter("all")}
           >
             All

@@ -1,0 +1,81 @@
+.lessonHeader {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.title {
+    color: var(--text-main);
+
+}
+
+.description {
+    color: var(--text-soft);
+    margin-top: 20px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.boardContainer {
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+
+.piecesInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px;
+}
+
+.pieceCard {
+    background: #f7f7f7;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 12px 15px;
+    transition: 0.2s ease;
+}
+
+.pieceCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pieceCard h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.pieceCard p {
+    margin: 4px 0 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+
+@media (min-width: 400px) {
+     .boardContainer {
+        max-width: 320px;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        align-items: center;
+    }
+
+    .boardContainer {
+        max-width: 500px;
+    }
+}
